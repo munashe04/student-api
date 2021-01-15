@@ -20,21 +20,21 @@ public class StudentController {
 		
 	
 	 @PostMapping
-	 public void saveEntity(@RequestBody Student student) {
-		serv.saveEntity(student);
+	 public void saveEntity(@RequestBody StudentDto dto) {
+		serv.saveEntity(dto);
 	 }
 	 
 	 @GetMapping()
-	 public List<Student> getAll() {
+	 public List<StudentDto> getAll() {
 		return serv.getAll();
 	 }
 	 
 	 @GetMapping(path ="{id}")
-	 public Optional<Student>getById(@PathVariable ("id") int id){
+	 public Optional<StudentDto>getById(@PathVariable ("id") int id){
 		 return serv.getById(id);
 	 }
 	 @PutMapping(path ="{id}")
-	 public void updateById(@RequestBody Student student1,@PathVariable ("id") int id) {
+	 public void updateById(@RequestBody StudentDto student1,@PathVariable ("id") int id) {
 		 serv.updateById(student1, id);
 	 }
 	 @DeleteMapping(path ="{id}")

@@ -1,14 +1,11 @@
 package com.student;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Student {
+public class StudentDto {
 	@Id
-	@GeneratedValue
-	
 	private int id;
 	private String name;
 	private String modules;
@@ -32,14 +29,6 @@ public class Student {
 	public void setModules(String modules) {
 		this.modules = modules;
 	}
-	
-	public Student() {};
-	public Student(int id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-		
-	}
-	
+
 
 }
