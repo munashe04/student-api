@@ -15,15 +15,15 @@ public class Student {
 	private int id;
 	private String name;
 	private String modules;
-	private Date dateCreated;
+	private String dateCreated;
 	private String status;
 	
 	
-	public Date getDateCreated() {
+	public String getDateCreated() {
 		return dateCreated;
 	}
-	public void setDateCreated(Date dateCreated) {
-		this.dateCreated = dateCreated;
+	public void setDateCreated(String string) {
+		this.dateCreated = string;
 	}
 	public String getStatus() {
 		return status;
@@ -58,18 +58,7 @@ public class Student {
 		this.name = name;
 		
 	}
-	public void setDateCreated(LocalDate now) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void setDateCreated(int date) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void setDateCreated(String string) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	
 
 }

@@ -46,21 +46,11 @@ public class StudentServiceImpl implements StudentService {
 			 repo.save(student1);
 		}
 		return 1;
-	
 }
 
 	@Override
 	public StudentDto saveEntity(StudentDto dto) {
-		Student student = new Student();
-		Date today = new Date();
-		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		 
-		student.setModules(dto.getModules());
-		student.setId(dto.getId());
-		student.setName(dto.getName());
-		student.setDateCreated((dateFormat.format(today)));
-		 
-	 repo.save(student);
+		repo.save(conv.dtoToEntity(dto));
 	 return dto;
 		
 	}

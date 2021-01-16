@@ -1,6 +1,9 @@
 package com.student;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,10 +25,13 @@ public class StudentConverter {
 	
 	public Student dtoToEntity(StudentDto dto) {
 		Student student = new Student();
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date today = new Date();
+	
 		student.setId(dto.getId());
 		student.setName(dto.getName());
 		student.setModules(dto.getModules());
-		student.setDateCreated(LocalDate.now());
+		student.setDateCreated(dateFormat.format(today));
 		
 		return student;
 	}

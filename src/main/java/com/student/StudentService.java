@@ -21,22 +21,9 @@ public interface StudentService  {
 	 
 	 
 		public default StudentDto saveEntity(StudentDto dto) {
-			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-			Date today = new Date();
-		
-		
-			System.out.println(dateFormat.format(today));
-			Student student = new Student();
-			student.setId(dto.getId());
-			student.setName(dto.getName());
-			student.setModules(dto.getModules());
-			student.setDateCreated((dateFormat.format(today)));
-			
 			 List<Student> DB = new ArrayList<>();
-			
-			DB.add(student);
-			
-			return (StudentDto) DB.stream().map(conv::entityToDto).collect(Collectors.toList());
+			  DB.add(conv.dtoToEntity(dto));
+			return (StudentDto) DB;
 		}
 			 
 	
