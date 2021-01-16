@@ -24,10 +24,10 @@ public class StudentController {
 		serv.saveEntity(dto);
 	 }
 	 
-	/* @GetMapping()
-	 public List<StudentDto> getAll() {
+	@GetMapping
+	 public List<Student> getAll() {
 		return serv.getAll();
-	 }*/
+	 }
 	 
 	 @GetMapping(path ="{id}")
 	 public Optional<Student>getById(@PathVariable ("id") int id){

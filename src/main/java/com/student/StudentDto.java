@@ -1,8 +1,7 @@
 package com.student;
-import javax.persistence.Id;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.stereotype.Component;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class StudentDto {
@@ -30,6 +29,7 @@ public class StudentDto {
 	public void setModules(String modules) {
 		this.modules = modules;
 	}
+	 List<Student> DB = new ArrayList<>();
 
 
 }

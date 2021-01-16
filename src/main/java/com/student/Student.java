@@ -62,6 +62,14 @@ public class Student {
 		// TODO Auto-generated method stub
 		
 	}
+	public void setDateCreated(int date) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setDateCreated(String string) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }
