@@ -30,12 +30,12 @@ public class StudentController {
 	 }
 	 
 	 @GetMapping(path ="{id}")
-	 public Optional<Student>getById(@PathVariable ("id") int id){
+	 public Optional<Student> getById(@PathVariable ("id") int id){
 		 return serv.getById(id);
 	 }
 	 @PutMapping(path ="{id}")
-	 public void updateById(@RequestBody Student student1,@PathVariable ("id") int id) {
-		 serv.updateById(student1, id);
+	 public void updateById(@RequestBody StudentDto dto,@PathVariable ("id") int id) {
+		 serv.updateById(dto, id);
 	 }
 	 @DeleteMapping(path ="{id}")
 			 public void deleteById(@PathVariable ("id") int id){

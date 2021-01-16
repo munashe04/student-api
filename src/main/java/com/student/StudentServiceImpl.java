@@ -16,9 +16,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class StudentServiceImpl implements StudentService {
 	
-	
-	public static final StudentConverter conv = new StudentConverter();
-	 List<Student> DB = new ArrayList<>();
+	@Autowired
+	private StudentConverter conv;
+	 List<StudentDto> DB = new ArrayList<>();
 	
 	@Autowired
 	private StudentRepository repo;
@@ -33,19 +33,23 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public Optional<Student> getById(int id) {
 		return repo.findById(id);
+		 
 	}
 
 	@Override
-	public Student deleteById(int id) {
+	public int deleteById(int id) {
 		 repo.deleteById(id);
-		 return repo.getOne(id);
+		 return 0;
+		 
+		 
 	}
 	@Override
-	public int updateById(Student student1,int id) {
+	public int updateById(StudentDto dto,int id) {
 		if(repo.findById(id) != null) {
-			 repo.save(student1);
+			repo.save(conv.dtoToEntity(dto));
 		}
-		return 1;
+		
+		return 0;
 }
 
 	@Override

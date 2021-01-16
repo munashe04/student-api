@@ -7,6 +7,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class StudentConverter {
 	
 	public StudentDto entityToDto(Student student) {
@@ -15,7 +18,6 @@ public class StudentConverter {
 		dto.setName(student.getName());
 		dto.setModules(student.getModules());
 	
-		
 		return dto;
 	}
 	
