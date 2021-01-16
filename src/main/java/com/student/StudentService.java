@@ -8,17 +8,16 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.customer.Customer;
-import com.customer.CustomerDto;
 
 @Service
 public interface StudentService  {
 	
-	@Autowired
-	StudentConverter conv;
+	public static final StudentConverter conv = new StudentConverter();
+	
+	
 
 	 List<Student> DB = new ArrayList<>();
-	
+	 
 	 
 		public default StudentDto saveEntity(StudentDto dto) {
 			
@@ -28,20 +27,19 @@ public interface StudentService  {
 			return (StudentDto) DB.stream().map(conv::entityToDto).collect(Collectors.toList());
 		}
 			 
-		}
 	
-	 default List<StudentDto> getAll(){
+	/* default List<StudentDto> getAll(){
 		 return DB;
-	 }
+	 }*/
 	
-	public Optional<StudentDto> getById(int id);
+	public Optional<Student> getById(int id);
 	
 	
-	default StudentDto deleteById(int id) {
-		return (StudentDto) DB;
+	default Student deleteById(int id) {
+		return (Student) DB;
 	}
 	
-	 default int updateById(StudentDto student1,int id) {
+	 default int updateById(Student student1,int id) {
 		 return 1;
 		 
 	}	

@@ -1,5 +1,6 @@
 package com.student;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,6 +24,7 @@ public class StudentConverter {
 		student.setId(dto.getId());
 		student.setName(dto.getName());
 		student.setModules(dto.getModules());
+		student.setDateCreated(LocalDate.now());
 		
 		return student;
 	}

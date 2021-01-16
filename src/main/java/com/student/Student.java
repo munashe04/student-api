@@ -1,5 +1,8 @@
 package com.student;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,7 +15,22 @@ public class Student {
 	private int id;
 	private String name;
 	private String modules;
+	private Date dateCreated;
+	private String status;
 	
+	
+	public Date getDateCreated() {
+		return dateCreated;
+	}
+	public void setDateCreated(Date dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	
 	public int getId() {
 		return id;
@@ -38,6 +56,10 @@ public class Student {
 		super();
 		this.id = id;
 		this.name = name;
+		
+	}
+	public void setDateCreated(LocalDate now) {
+		// TODO Auto-generated method stub
 		
 	}
 	

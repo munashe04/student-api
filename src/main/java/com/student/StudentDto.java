@@ -1,11 +1,12 @@
 package com.student;
-
-import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.stereotype.Component;
+
+
 public class StudentDto {
-	@Id
+	
 	private int id;
 	private String name;
 	private String modules;

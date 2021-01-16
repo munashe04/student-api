@@ -14,23 +14,23 @@ public class StudentServiceImpl implements StudentService {
 	@Autowired
 	private StudentRepository repo;
 
-	@Override
+	/*@Override
 	public List<StudentDto> getAll() {
 		return repo.findAll();
-	}
+	}*/
 
 	@Override
-	public Optional<StudentDto> getById(int id) {
+	public Optional<Student> getById(int id) {
 		return repo.findById(id);
 	}
 
 	@Override
-	public StudentDto deleteById(int id) {
+	public Student deleteById(int id) {
 		 repo.deleteById(id);
 		 return repo.getOne(id);
 	}
 	@Override
-	public int updateById(StudentDto student1,int id) {
+	public int updateById(Student student1,int id) {
 		if(repo.findById(id) != null) {
 			 repo.save(student1);
 		}
@@ -39,8 +39,8 @@ public class StudentServiceImpl implements StudentService {
 }
 
 	@Override
-	public StudentDto saveEntity(StudentDto student) {
-	return	repo.save(student);
+	public StudentDto saveEntity(StudentDto dto) {
+	return repo.save(dto);
 		
 	}
 	
