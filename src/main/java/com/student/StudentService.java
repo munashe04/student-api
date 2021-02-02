@@ -3,21 +3,28 @@ package com.student;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
+
 import org.springframework.stereotype.Service;
 
 @Service
 public interface StudentService  { 
 	
 	
-	public StudentDto saveEntity(StudentDto dto);
+	public StudentDto saveEntity(int id,StudentDto dto);
 	
-	public List<Student> getAll();
+	/*default StudentDto addEntity(StudentDto dto) {
+		UUID id =UUID.randomUUID();
+		return saveEntity(id,dto);
+	}*/
 	
-	public Optional<Student> getById(int id);
+	public List<StudentDto> getAll();
 	
-	public int deleteById(int id);
+	public StudentDto getById(int id);
 	
-	 public int updateById(StudentDto dto,int id);
+	public StudentDto deleteById(int id);
+	
+	 public StudentDto updateById(StudentDto dto,int id);
 	 
 	 
 	 

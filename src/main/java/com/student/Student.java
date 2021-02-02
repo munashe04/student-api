@@ -1,7 +1,6 @@
 package com.student;
 
-import java.time.LocalDate;
-import java.util.Date;
+import java.util.UUID;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

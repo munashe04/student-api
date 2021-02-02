@@ -2,9 +2,10 @@ package com.student;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
+
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
@@ -21,7 +22,7 @@ public class StudentConverter {
 		return dto;
 	}
 	
-	public List<StudentDto>entityToDto(List<Student>student){
+	public List<StudentDto>entityToDto1(List<Student>student){
 		return student.stream().map(x -> entityToDto(x)).collect(Collectors.toList());
 	}
 	
@@ -40,8 +41,19 @@ public class StudentConverter {
 	public List<Student>dtoToEntity(List<StudentDto>dto){
 		return dto.stream().map(x -> dtoToEntity(x)).collect(Collectors.toList());
 	}
+
+	/*public Optional<StudentDto> entityToDto1(Optional<Student> studen) {
+		
+		studen.stream().filter(dto -> dto.getId()== id).findFirst());
+		return studen.stream().map(x -> entityToDto(x)).collect(Collectors.toList());
+	}*/
+		
+	}
+
+
+	
 	
 
 	
 
-}
+
